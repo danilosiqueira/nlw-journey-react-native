@@ -8,6 +8,8 @@ Rodar o projeto: `npx expo start`
 
 Rodar o projeto limpando cache: `npx expo start --clear`
 
+Se o projeto não rodar e ficar em uma tela de carregamento infinito, verifique se seu anti vírus não esteja bloqueando.
+
 Instalação do [NativeWind](https://www.nativewind.dev/v4/getting-started/expo-router)
 
 Obs.: configurar o NativeWind para trabalhar com TypeScript.
