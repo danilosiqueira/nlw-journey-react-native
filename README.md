@@ -10,6 +10,8 @@ Rodar o projeto limpando cache: `npx expo start --clear`
 
 Se o projeto não rodar e ficar em uma tela de carregamento infinito, verifique se seu anti vírus não esteja bloqueando.
 
+## Instalação das bibliotecas
+
 Instalação do [NativeWind](https://www.nativewind.dev/v4/getting-started/expo-router)
 
 Obs.: configurar o NativeWind para trabalhar com TypeScript.
@@ -21,3 +23,7 @@ Instalação da font Inter: `npx expo install expo-font @expo-google-fonts/inter
 Instalação do clsx: `npm i clsx`
 
 Instalação do [lucide.dev](https://lucide.dev/): `npx expo install react-native-svg lucide-react-native`
+
+Instalação da biblioteca [React Native Calendars](https://github.com/wix/react-native-calendars): `npm install react-native-calendars`
+
+Instalação da biblioteca [Expo BlurView](https://docs.expo.dev/versions/latest/sdk/blur-view/): `npx expo install expo-blur`
