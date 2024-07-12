@@ -27,3 +27,5 @@ Instalação do [lucide.dev](https://lucide.dev/): `npx expo install react-nativ
 Instalação da biblioteca [React Native Calendars](https://github.com/wix/react-native-calendars): `npm install react-native-calendars`
 
 Instalação da biblioteca [Expo BlurView](https://docs.expo.dev/versions/latest/sdk/blur-view/): `npx expo install expo-blur`
+
+Instalação da biblioteca [Axios](https://axios-http.com/ptbr/docs/intro): `npm install axios`
