@@ -14,6 +14,10 @@ Instalação do [NativeWind](https://www.nativewind.dev/v4/getting-started/expo-
 
 Obs.: configurar o NativeWind para trabalhar com TypeScript.
 
+Instalar a extensão [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).
+
 Instalação da font Inter: `npx expo install expo-font @expo-google-fonts/inter`
 
 Instalação do clsx: `npm i clsx`
+
+Instalação do [lucide.dev](https://lucide.dev/): `npx expo install react-native-svg lucide-react-native`
