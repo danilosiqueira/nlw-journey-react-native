@@ -29,3 +29,6 @@ Instalação da biblioteca [React Native Calendars](https://github.com/wix/react
 Instalação da biblioteca [Expo BlurView](https://docs.expo.dev/versions/latest/sdk/blur-view/): `npx expo install expo-blur`
 
 Instalação da biblioteca [Axios](https://axios-http.com/ptbr/docs/intro): `npm install axios`
+
+Instalação da biblioteca [Dayjs](https://day.js.org/): `npm i dayjs`
+Instalação da biblioteca [Zod](https://zod.dev/): `npm i zod`

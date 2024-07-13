@@ -1,4 +1,6 @@
-import "@/styles/global.css";
+import "@/styles/global.css"
+import "@/utils/dayjsLocaleConfig"
+
 import { 
     useFonts, 
     Inter_500Medium, 
