@@ -75,43 +75,45 @@ export default function Index() {
 
     return (
         <View className="flex-1 items-center justify-center px-5">
-            <Image 
-                source={require("@/assets/logo.png")} 
-                className="h-8" 
-                resizeMode="contain" 
-            />
 
-            <Image source={require("@/assets/bg.png")} className="absolute" ></Image>
+            <Image source={require("@/assets/logo.png")} className="h-8" resizeMode="contain" />
+
+            <Image source={require("@/assets/bg.png")} className="absolute" />
 
             <Text className="text-zinc-400 font-regular text-center text-lg mt-3">
                 Convide seus amigos e planeja sua{"\n"}próxima viagem
             </Text>
 
             <View className="w-full bg-zinc-900 p-4 rounded-xl my-8 border border-zinc-800">
+
                 <Input>
+
                     <MapPin color={colors.zinc[400]} size={20}></MapPin>
-                    <Input.Field 
-                        placeholder="Para onde?" 
+
+                    <Input.Field placeholder="Para onde?" 
                         editable={stepForm === StepForm.TRIP_DETAILS}
                         onChangeText={setDestination}
                         value={destination} />
+
                 </Input>
 
                 <Input>
+
                     <IconCalendar color={colors.zinc[400]} size={20}></IconCalendar>
-                    <Input.Field 
-                        placeholder="Quando?" 
+
+                    <Input.Field placeholder="Quando?" 
                         editable={stepForm === StepForm.TRIP_DETAILS}
                         onFocus={() => Keyboard.dismiss()}
                         showSoftInputOnFocus={false}
                         onPressIn={() => 
                             stepForm === StepForm.TRIP_DETAILS && setShowModal(TypeModal.CALENDAR)
                         }
-                        value={selectedDates.formatDatesInText}
-                    ></Input.Field>
+                        value={selectedDates.formatDatesInText} />
+
                 </Input>
 
-                { stepForm === StepForm.ADD_EMAIL && (
+                {
+                    stepForm === StepForm.ADD_EMAIL && (
                     <>
                         <View className="border-b py-3 border-zinc-800">
                             <Button variant="secondary" onPress={() => setStepForm(StepForm.TRIP_DETAILS)}>
@@ -122,6 +124,7 @@ export default function Index() {
 
                         <Input>
                             <UserRoundPlus color={colors.zinc[400]} size={20}></UserRoundPlus>
+
                             <Input.Field 
                                 placeholder="Quem estará na viagem?"
                                 autoCorrect={false}
@@ -132,32 +135,32 @@ export default function Index() {
                                 }}
                                 showSoftInputOnFocus={false} />
                         </Input>
-                    </>
-                )}
+                    </>)
+                }
 
                 <Button onPress={handleNextStepForm}>
                     <Button.Title>{ stepForm == StepForm.TRIP_DETAILS ? "Continuar" : "Confirmar Viagem" }</Button.Title>
-                    <ArrowRight color={colors.lime[950]} size={20}></ArrowRight>
+                    <ArrowRight color={colors.lime[950]} size={20} />
                 </Button>
+
             </View>
 
             <Text className="text-zinc-500 font-regular text-center text-base">
                 Ao planejar sua viagem pela plann.er você automaticamente concorda com nossos {" "}
+
                 <Text className="text-zinc-300 underline">
                     termos de uso e políticas de privacidade.
                 </Text>
             </Text>
 
-            <Modal
-                title="Selecionar datas"
+            <Modal title="Selecionar datas"
                 subtitle="Selecione a data de ida e volta da viagem"
                 visible={showModal === TypeModal.CALENDAR}
-                onClose={() => setShowModal(TypeModal.NONE)}
-            >
+                onClose={() => setShowModal(TypeModal.NONE)}>
+
                 <View className="gap-4 mt-4">
-                    <Calendar 
+                    <Calendar onDayPress={handleSelectedDate}
                         minDate={dayjs().toISOString()}
-                        onDayPress={handleSelectedDate}
                         markedDates={selectedDates.dates} />
                 </View>
 
@@ -166,12 +169,11 @@ export default function Index() {
                 </Button>
             </Modal>
 
-            <Modal
-                title="Selecionar convidados"
+            <Modal title="Selecionar convidados"
                 subtitle="Os convidados irão receber e-mails para confirmar a participação na viagem."
                 visible={showModal === TypeModal.GUESTS}
-                onClose={() => setShowModal(TypeModal.NONE)}
-            >
+                onClose={() => setShowModal(TypeModal.NONE)}>
+
                 <View className="my-2 flex-wrap gap-2 border-b border-zinc-800 py-5 items-start">
                     {
                         emailsToInvite.length > 0 ? (
@@ -182,14 +184,14 @@ export default function Index() {
                             </Text>
                         )
                     }
-
                 </View>
 
                 <View className="gap-4 mt-4">
+
                     <Input variant="secondary">
                         <AtSign color={colors.zinc[400]} size={20} />
-                        <Input.Field 
-                            placeholder="Digite o e-mail do convidado"
+
+                        <Input.Field placeholder="Digite o e-mail do convidado"
                             keyboardType="email-address"
                             onChangeText={(text) => setEmailToInvite(text.toLowerCase())}
                             value={emailToInvite}
@@ -200,7 +202,9 @@ export default function Index() {
                     <Button onPress={handleAddEmail}>
                         <Button.Title>Convidar</Button.Title>
                     </Button>
+
                 </View>
+
             </Modal>
 
         </View>
